@@ -13,7 +13,7 @@ This project is a **Job Posting Web Application** built using **Spring Boot (Jav
 ### Frontend (React)
 - Built using **React.js**.
 - Fetches and displays job posts from the backend.
-  --> From Github user |
+  --> From Github user `Navin Reddy` | Search here about `React UI` [https://github.com/navinreddy20/spring6-course/tree/80e0c059c5c259ef6009838a934ed9e92865c3d7]
 
 ### Backend
 - Java 21+
@@ -42,3 +42,4 @@ This project is a **Job Posting Web Application** built using **Spring Boot (Jav
 
 Watch a short demo of the Job Portal application in action:
 
+https://github.com/user-attachments/assets/1524f892-64f3-408d-aa66-b3a5c28330da
