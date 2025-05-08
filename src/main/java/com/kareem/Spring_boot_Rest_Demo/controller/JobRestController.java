@@ -21,25 +21,36 @@ public class JobRestController {
 
     @GetMapping("jobPost/{postId}")
     public JobPost getJob(@PathVariable("postId") int postId) {
-        return jobService.getPost(postId);
+        return jobService.getJobById(postId);
     }
 
     @PostMapping(path = "jobPost", consumes = {"application/json"})
     public JobPost addJob(@RequestBody JobPost jobPost) {
         jobService.addJob(jobPost);
-        return jobService.getPost(jobPost.getPostId());
+        return jobService.getJobById(jobPost.getPostId());
     }
 
     @PutMapping("jobPost")
     public JobPost updateJob(@RequestBody JobPost jobPost) {
-        jobService.updatePost(jobPost);
-        return jobService.getPost(jobPost.getPostId());
+        jobService.updateJob(jobPost);
+        return jobService.getJobById(jobPost.getPostId());
+    }
+
+    @GetMapping("jobPosts/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable("keyword") String keyword){
+        return jobService.search(keyword);
     }
 
     @DeleteMapping("jobPost/{postId}")
     public String deleteJob(@PathVariable int postId) {
         jobService.deleteJob(postId);
-        return jobService.getPost(postId).getPostProfile() + "Deleted ...";
+        return "Deleted ...";
+    }
+
+    @GetMapping("load")
+    public String loadData() {
+        jobService.load();
+        return "success";
     }
 
 }
