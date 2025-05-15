@@ -35,6 +35,7 @@ public class JobService {
 
     public void updateJob(JobPost jobPost) {
         jobRepo.save(jobPost);
+
     }
 
 
