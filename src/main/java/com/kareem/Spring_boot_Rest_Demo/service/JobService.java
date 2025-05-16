@@ -32,7 +32,9 @@ public class JobService{
     }
 
     public JobPost getJobById(int id) {
+
         return jobRepo.findById(id).orElse(new JobPost());
+
     }
 
     public void updateJob(JobPost jobPost) {

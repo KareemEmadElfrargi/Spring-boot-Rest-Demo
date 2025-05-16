@@ -34,7 +34,7 @@ public class LoggingAspect {
     public void logMethodExecuted(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
 
-        LOGGER.info(" Method Executed:", methodName);
+        LOGGER.info(" Method Executed: {}", methodName);
 
     }
 
