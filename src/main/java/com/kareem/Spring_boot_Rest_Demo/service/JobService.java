@@ -3,6 +3,7 @@ package com.kareem.Spring_boot_Rest_Demo.service;
 import com.kareem.Spring_boot_Rest_Demo.model.JobPost;
 import com.kareem.Spring_boot_Rest_Demo.repository.JobRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.javapoet.ClassName;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,13 +11,14 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class JobService {
+public class JobService{
 
 
     @Autowired
     JobRepo jobRepo;
 
     public void addJob(JobPost jobPost) {
+
         jobRepo.save(jobPost);
 
     }
@@ -82,5 +84,10 @@ public class JobService {
 
     public List<JobPost> search(String keyword) {
         return jobRepo.findByPostProfileContainingOrPostDesc(keyword,keyword);
+    }
+
+    @Override
+    public String toString() {
+        return JobService.class.getSimpleName();
     }
 }
