@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-
 public class ValidationAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidationAspect.class);
 
@@ -23,9 +22,6 @@ public class ValidationAspect {
 
         }
         Object object = proceedingJoinPoint.proceed(new Object[]{postId});
-
-
-
         return object;
     }
 
